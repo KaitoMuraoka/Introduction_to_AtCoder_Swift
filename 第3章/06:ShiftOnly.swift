@@ -8,20 +8,16 @@ private func readIntArray() -> [Int] {
     readLine()!.split(separator: " ").map{Int(String($0))!}
 }
 
+func process() -> Int {
+    let _ = readInt()
+    var positiveInteger = readIntArray()
+    var operationCount = 0
 
-func main() -> Int {
-    let N = readInt()
-    var Aarray = readIntArray()
-    var count = 0 // 操作回数
-
-    while Aarray.allSatisfy({$0 % 2 == 0}) {
-        // 操作を行えるならば、操作を行う
-        Aarray = Aarray.map{$0 / 2}
-        // 操作回数を1増やす
-        count += 1
+    while positiveInteger.allSatisfy({$0 % 2 == 0}) {
+        positiveInteger = positiveInteger.map{$0 / 2}
+        operationCount += 1
     }
-    return count
+    return operationCount
 }
 
-
-print(main())
+print(process())
