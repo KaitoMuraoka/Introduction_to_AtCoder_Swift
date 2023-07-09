@@ -8,6 +8,7 @@ let C = readInt()
 let X = readInt()
 
 func process() -> Int {
+
     var result = 0
     for a in 0...A {
         for b in 0...B {
